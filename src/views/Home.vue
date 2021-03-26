@@ -1,8 +1,5 @@
 <template>
-  <div class="container">
-    <el-header>
-      <div>水表识别系统</div>
-    </el-header>
+  <div class="container home-page">
     <div class="upload-container">
       <div class="upload-photo-wall">
         <el-upload
@@ -16,7 +13,10 @@
           <i class="el-icon-plus"></i>
         </el-upload>
         <el-dialog v-model="dialogVisible">
-          <img width="100%" :src="dialogImageUrl" alt="">
+          <div class="text-center">
+            <img :src="dialogImageUrl" :alt="dialogImageName">
+            <div>{{ dialogImageName }}</div>
+          </div>
         </el-dialog>
       </div>
       <div class="action-bar">
@@ -33,6 +33,7 @@ export default {
     return {
       fileList: [],
       dialogImageUrl: '',
+      dialogImageName: '',
       dialogVisible: false
     }
   },
@@ -42,12 +43,18 @@ export default {
     },
     handlePictureCardPreview (file) {
       this.dialogImageUrl = file.url
+      this.dialogImageName = file.name
       this.dialogVisible = true
     }
   }
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+.home-page {
 
+  .action-bar {
+    margin: 0.6rem 0;
+  }
+}
 </style>
