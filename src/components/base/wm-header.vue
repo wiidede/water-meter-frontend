@@ -4,7 +4,7 @@
     <div class="right-header d-flex align-items-center h-100">
       <router-link :to="head.path" v-for="(head, index) in headList" :key="`head-${index}`" :class="{active: head.active}"
                    class="header-item h-100 mr-1 ml-1 pl-3 pr-3">
-        <div class="h-100 d-flex align-items-center">{{ head.label }}</div>
+        <div class="header-item-text h-100 d-flex align-items-center">{{ head.label }}</div>
       </router-link>
     </div>
   </el-header>
@@ -50,12 +50,29 @@ export default {
   .right-header {
     .header-item {
       cursor: pointer;
+      transition: 0.3s all ease;
+
+      .header-item-text {
+        position: relative;
+
+        &:after {
+          content: "";
+          display: inline-block;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          transition: 0.3s all ease;
+        }
+      }
 
       &.active {
         color: $--color-primary;
 
-        &>div {
-          border-bottom: 3px solid $--color-primary;
+        .header-item-text {
+          &:after {
+            background: $--color-primary;
+          }
         }
       }
 
