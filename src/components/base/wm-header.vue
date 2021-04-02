@@ -11,7 +11,8 @@
 </template>
 
 <script>
-import { reactive, watchEffect, getCurrentInstance } from 'vue'
+import { reactive, watchEffect } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default {
   name: 'wm-header',
@@ -22,10 +23,10 @@ export default {
         { path: '/about', label: '关于', active: false }
       ]
     )
-    const { ctx } = getCurrentInstance()
+    const router = useRouter()
     watchEffect(() => {
       headList.forEach(head => {
-        head.active = ctx.$router.currentRoute.value.path === head.path
+        head.active = router.currentRoute.value.path === head.path
       })
     })
     return { headList }

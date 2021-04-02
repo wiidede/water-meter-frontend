@@ -5,7 +5,7 @@
         <el-upload
                 action="https://jsonplaceholder.typicode.com/posts/"
                 multiple
-                limit="10"
+                :limit="10"
                 list-type="picture-card"
                 :on-preview="handlePictureCardPreview"
                 :on-remove="handleRemove"

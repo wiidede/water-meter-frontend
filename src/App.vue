@@ -1,20 +1,32 @@
 <template>
   <wm-header></wm-header>
-  <el-scrollbar>
+  <el-scrollbar ref="scrollViewRef">
     <router-view class="pt-4 pb-4" style="min-height: calc(100vh - 60px)"/>
     <wm-footer></wm-footer>
   </el-scrollbar>
 </template>
 
 <script>
+import { useRouter } from 'vue-router'
 import wmHeader from './components/base/wm-header'
 import wmFooter from './components/base/wm-footer'
+import { ref } from 'vue'
 
 export default {
   name: 'App',
   components: {
     wmHeader,
     wmFooter
+  },
+  setup () {
+    const scrollViewRef = ref(null)
+    const router = useRouter()
+    router.beforeEach(() => {
+      if (scrollViewRef.value) {
+        scrollViewRef.value.wrap.scrollTop = 0
+      }
+    })
+    return { scrollViewRef }
   }
 }
 </script>
@@ -32,10 +44,13 @@ body {
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #6c757d;
   height: 100%;
+}
+
+.el-scrollbar__wrap {
+  scroll-behavior: smooth;
 }
 </style>
