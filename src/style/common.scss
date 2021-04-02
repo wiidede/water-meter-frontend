@@ -1,4 +1,16 @@
+@import "../element-variables.scss";
+
 a {
   text-decoration: none !important;
   color: inherit;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+*[tabindex], a {
+  &:focus {
+    outline: 1px auto $--color-primary;
+  }
 }
