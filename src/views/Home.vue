@@ -3,7 +3,7 @@
     <result ref="resultRef"></result>
     <div class="upload-container d-flex align-items-end">
       <el-upload
-              action="http://127.0.0.1:5000/recognize"
+              :action="`${baseUrl}recognize`"
               :show-file-list="false"
               accept=".jpg,.jpeg,.png,.gif,.JPG,.JPEG,.PNG,.GIF"
               multiple
@@ -19,6 +19,8 @@
         1.点击左侧按钮上传并识别水表图片
         <br>
         2.页面最多允许上传{{ fileLimit }}张图片
+        <br>
+        3.你可以点击<a :href="`${baseUrl}download/demo`" download="demo.jpg">下载示例图片</a>
       </span>
     </div>
   </div>
@@ -28,6 +30,7 @@
 import { ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import { b64toBlob } from '../utils/file'
+import { getBaseUrl } from '../utils'
 import result from '../components/result'
 
 export default {
@@ -35,7 +38,7 @@ export default {
   components: { result },
   setup () {
     const fileLimit = 50
-
+    const baseUrl = getBaseUrl()
     const resultRef = ref(null)
 
     const handleApiSuccess = (response, file) => {
@@ -59,6 +62,7 @@ export default {
 
     return {
       fileLimit,
+      baseUrl,
       resultRef,
       handleApiSuccess,
       handleApiError,

@@ -1,3 +1,8 @@
+export const getBaseUrl = () => {
+  const config = require('../config/index.json')
+  return config.BASE_URL
+}
+
 // copy to clipboard
 export const copyToClipboard = (content, successFunc, errorFunc) => {
   const tempEl = document.createElement('input')

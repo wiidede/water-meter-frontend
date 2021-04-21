@@ -3,6 +3,10 @@
 a {
   text-decoration: none !important;
   color: inherit;
+
+  &:hover {
+    color: $--color-primary
+  }
 }
 
 button:focus {
