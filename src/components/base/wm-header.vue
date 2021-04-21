@@ -1,6 +1,6 @@
 <template>
   <el-header class="w-100 d-flex align-items-center justify-content-between">
-    <router-link to="/" class="header-title">水表识别系统</router-link>
+    <router-link to="/" class="header-title logo">水表识别系统</router-link>
     <div class="right-header d-flex align-items-center h-100">
       <router-link :to="head.path" v-for="(head, index) in headList" :key="`head-${index}`" :class="{active: head.active}"
                    class="header-item h-100 mr-1 ml-1 pl-3 pr-3">

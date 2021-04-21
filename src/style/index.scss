@@ -1,2 +1,9 @@
 @import "./normalize.css";
 @import "./common.scss";
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #6c757d;
+  height: 100%;
+}

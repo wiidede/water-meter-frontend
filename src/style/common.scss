@@ -14,3 +14,22 @@ button:focus {
     outline: 1px auto $--color-primary;
   }
 }
+
+.el-scrollbar__wrap {
+  scroll-behavior: smooth;
+}
+
+.logo {
+  color: black;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    background: center / contain url("../assets/logo.png");
+  }
+}

@@ -1,7 +1,10 @@
 <template>
   <div class="result-container d-flex flex-wrap justify-content-between">
     <h1 class="w-100" v-if="resState.resList.length">识别结果：</h1>
-    <h1 class="w-100" v-else>欢迎使用水表识别系统</h1>
+    <div class="w-100" v-else>
+      <h1>欢迎使用水表识别系统</h1>
+      <p>点击下方按钮开始识别</p>
+    </div>
     <el-card :body-style="{ padding: '0' }" v-for="(res, index) in resState.resList" :key="`card${index})`" class="mb-4">
       <img :src="res.imgRaw" class="water-meter-image" alt="water meter">
       <div class="bottom d-flex align-items-center justify-content-between p-3">

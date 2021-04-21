@@ -49,8 +49,4 @@ body {
   color: #6c757d;
   height: 100%;
 }
-
-.el-scrollbar__wrap {
-  scroll-behavior: smooth;
-}
 </style>
