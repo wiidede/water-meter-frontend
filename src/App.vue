@@ -1,7 +1,11 @@
 <template>
   <wm-header></wm-header>
   <el-scrollbar ref="scrollViewRef">
-    <router-view class="pt-4 pb-4" style="min-height: calc(100vh - 120px)"/>
+    <router-view v-slot="{ Component }" class="pt-4 pb-4" style="min-height: calc(100vh - 120px)">
+      <keep-alive>
+        <component :is="Component"></component>
+      </keep-alive>
+    </router-view>
     <wm-footer></wm-footer>
   </el-scrollbar>
 </template>
