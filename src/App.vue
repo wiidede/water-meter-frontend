@@ -1,7 +1,7 @@
 <template>
   <wm-header></wm-header>
   <el-scrollbar ref="scrollViewRef">
-    <router-view class="pt-4 pb-4" style="min-height: calc(100vh - 60px)"/>
+    <router-view class="pt-4 pb-4" style="min-height: calc(100vh - 120px)"/>
     <wm-footer></wm-footer>
   </el-scrollbar>
 </template>
