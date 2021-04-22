@@ -20,7 +20,7 @@
         <br>
         2.页面最多允许上传{{ fileLimit }}张图片
         <br>
-        3.你可以点击<a :href="`${baseUrl}download/demo`" download="demo.jpg">下载示例图片</a>
+        3.你可以点击<a :href="`${baseUrl}download/demo`" download="demo.zip">下载示例图片</a>
       </span>
     </div>
   </div>

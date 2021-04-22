@@ -28,6 +28,11 @@ button:focus {
   display: flex;
   align-items: center;
 
+  &.big:before {
+    width: 64px;
+    height: 64px;
+  }
+
   &:before {
     content: '';
     display: inline-block;
