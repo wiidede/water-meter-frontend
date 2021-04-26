@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["about"],{f820:function(n,e,t){"use strict";t.r(e);var c=t("7a23"),l={class:"container"},o=Object(c["n"])("h1",{class:"mb-5 logo big"},"水表识别系统",-1),s=Object(c["n"])("p",null,"作者：王子羽",-1),u=Object(c["n"])("p",null,"前端：Vue3 + Element Plus",-1),b=Object(c["n"])("p",null,"后端：Flask + Tensorflow",-1);function a(n,e){return Object(c["E"])(),Object(c["j"])("div",l,[o,s,u,b])}const r={};r.render=a;e["default"]=r}}]);
+//# sourceMappingURL=about.b6fdf61e.js.map
