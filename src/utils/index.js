@@ -1,6 +1,6 @@
 export const getBaseUrl = () => {
-  const config = require('../config/index.json')
-  return config.BASE_URL
+  const host = window.location.hostname
+  return `http://${host}:5000/`
 }
 
 // copy to clipboard
