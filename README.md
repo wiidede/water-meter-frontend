@@ -19,3 +19,10 @@
 - [前端](https://wiidede.github.io/graduation-project-front-end-knowledge/)
 - [后端](https://wiidede.github.io/graduation-project-back-end-knowledge/)
 - [部署](https://wiidede.github.io/graduation-project-note/#_3-%E9%83%A8%E7%BD%B2%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8)
+
+### 使用步骤
+
+```bash
+yarn
+yarn run serve
+```
